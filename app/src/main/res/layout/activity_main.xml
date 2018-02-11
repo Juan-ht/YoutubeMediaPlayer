@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="es.vcarmen.youtubemediaplayer.MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="REPRODUCIENDO VIDEO DESDE YOUTUBE"
+        android:textColor="#ff84000b"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="5dp" />
+
+    <View android:layout_width="fill_parent"
+
+        android:layout_height="2sp"
+        android:layout_marginBottom="5dp"
+        android:background="#000000">
+    </View>
+
+    <TextView
+    android:id="@+id/titulo"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:text="VIDEO"
+    android:textColor="#9c0606"
+    android:textSize="14dp"
+    android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buscarVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="BUSCAR VIDEO"/>
+
+    <EditText
+        android:id="@+id/editBuscarVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introduce una url para reproducir un video"/>
+
+
+    <Button
+        android:id="@+id/reproducirVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="REPRODUCIR VIDEO A PARTIR DE BUSQUEDA"/>
+
+</LinearLayout>

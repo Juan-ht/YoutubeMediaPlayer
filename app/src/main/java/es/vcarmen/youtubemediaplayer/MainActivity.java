@@ -12,9 +12,6 @@ import android.widget.Toast;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayer.ErrorReason;
-import com.google.android.youtube.player.YouTubePlayer.PlaybackEventListener;
-import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
@@ -87,15 +84,13 @@ public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.O
 
         Toast.makeText(this, "Reproduccion exitosa", Toast.LENGTH_LONG).show();
 
-        player.setPlayerStateChangeListener(playerStateChangeListener);
-        player.setPlaybackEventListener(playbackEventListener);
-
         if(youTubePlayer == null){
             youTubePlayer = player;
-            player.cueVideo(VIDEO_ID);
+
         }
-
-
+        if(!wasRestored)
+            player.cueVideo(VIDEO_ID);
+        player.play();
 
         //Log.v("id_video", VIDEO_ID);
     }
@@ -106,54 +101,4 @@ public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.O
         }
     }
 
-    private PlaybackEventListener playbackEventListener = new PlaybackEventListener() {
-
-        @Override
-        public void onBuffering(boolean arg0) {
-        }
-
-        @Override
-        public void onPaused() {
-        }
-
-        @Override
-        public void onPlaying() {
-        }
-
-        @Override
-        public void onSeekTo(int arg0) {
-        }
-
-        @Override
-        public void onStopped() {
-        }
-
-    };
-
-    private PlayerStateChangeListener playerStateChangeListener = new PlayerStateChangeListener() {
-
-        @Override
-        public void onAdStarted() {
-        }
-
-        @Override
-        public void onError(ErrorReason arg0) {
-        }
-
-        @Override
-        public void onLoaded(String arg0) {
-        }
-
-        @Override
-        public void onLoading() {
-        }
-
-        @Override
-        public void onVideoEnded() {
-        }
-
-        @Override
-        public void onVideoStarted() {
-        }
-    };
 }

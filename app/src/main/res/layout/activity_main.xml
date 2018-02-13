@@ -27,6 +27,7 @@
         android:background="#fff"
         android:padding="5dp" />
 
+
     <View android:layout_width="fill_parent"
 
         android:layout_height="2sp"
